@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import ButtonHandler from "./ButtonHandler";
 import StopButton from "./StopButton";
-import { minutesToDuration, secondsToDuration } from "../utils/duration";
+import { minutesToDuration} from "../utils/duration";
 import classNames from "../utils/class-names";
 import useInterval from "../utils/useInterval";
 import ProgressBar from "./ProgressBar";
+
 
 function Pomodoro() {
   // Timer starts out paused
@@ -32,7 +33,7 @@ function Pomodoro() {
           if (timerSets.focusSeconds > 0) {
             return { ...timerSets, focusSeconds: timerSets.focusSeconds - 1 };
           } else {
-
+            Audio("/alarm-clock-buzzer-beeps.mp3") 
             return {
               ...timerSets,
               focusSeconds: timerSets.focusBase * 60,
@@ -43,7 +44,7 @@ function Pomodoro() {
           if (timerSets.breakSeconds > 0) {
             return { ...timerSets, breakSeconds: timerSets.breakSeconds - 1 };
           } else {
-            
+            Audio("/alarm-clock-buzzer-beeps.mp3") 
             return {
               ...timerSets,
               breakSeconds: timerSets.breakBase * 60,
