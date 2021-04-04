@@ -1,2 +1,2 @@
-# Tomatos
-Pomos
+# Pomodor Timer App
+
